@@ -31,13 +31,69 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*==================== ACCORDION SKILLS ====================*/
+const skillsContent = document.getElementsByClassName('skills__content'),
+      skillsHeader = document.querySelectorAll('.skills__header')
 
+function toggleskills(){
+    let itemclass = this.parentNode.ClassName
+
+    for(i=0; i< skillsContent.length; i++){
+        skillsContent[i].className= 'skills__content skills__close'
+    }
+    if(itemclass === 'skills__content skills__close'){
+        this.parentNode.className = 'skills__content skills__open'
+    }
+}
+
+skillsHeader.forEach((el)=>{
+    el.addEventListener('click', toggleskills)
+})
 
 /*==================== QUALIFICATION TABS ====================*/
+// const tabs = document.querySelectorAll('[data-content]'),
 
+tabContents = document.querySelectorAll('[data-content]')
+
+tabs.forEach(tab =>{
+   tab.addEventListener('click', () =>{
+       const target = document.querySelector(tab.dataset.target)
+
+       tabContents.forEach(tabContent =>{
+          tabContent.classList.remove('qualification_active')
+
+        }) 
+        target.classList.add('qualification__active')
+
+        tabs.forEach(tab =>{
+           tab.classList.remove('qualification__active')
+        })
+        tab.classList.add('qualification__active')
+    })
+
+})
 
 /*==================== SERVICES MODAL ====================*/
+const modalViews = document.querySelectorAll('.services__modal'),
+       modalBtn = document.querySelectorAll('.services__button'),
+       modalClose = document.querySelectorAll('.services__modal-close')
 
+let modal = function(modalClick){
+    modalViews[modalClick].classList.add('active-modal')
+}  
+
+modalBtns.forEach((modalBtn,i) => {
+    modalBtn.addEventListener('click',() =>{
+      modal(i)
+    })
+})
+
+modalClose.forEach((modalClose) => {
+    modalClose.addEventListener('click',() =>{
+        modalViews.forEach((modalViews) =>{
+            modalViews.classList.remove('active-modal')
+        })
+    })
+})
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 
