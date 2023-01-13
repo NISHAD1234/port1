@@ -22,11 +22,11 @@
   
     <header class="header" id="header">
       <nav class="nav">
-        <a href="#" class="nav__logo">Alexa</a>
+        <a href="#" class="nav__logo">KISHAN</a>
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">
             <li class="nav__item">
-              <a href="#home" class="nav__link"><i class="uil uil-estate nav__icon"></i>Home </a>
+              <a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i>Home </a>
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i>About </a>
@@ -49,6 +49,8 @@
         </div>
 
         <div class="nav__btns">
+          <!-- Theme change button -->
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
             <div class="nav__toggle" id="nav-toggle"><i class="uil uil-apps"></i></div>
 
         </div>
@@ -896,7 +898,8 @@
     </footer>
 
     <!--==================== SCROLL TOP ====================-->
-
+     <a href="#" class="scrollup" id="scroll-up"></a>
+     <i class="uil uil-arrow-up scrollup__icon"></i>
     <!--==================== SWIPER JS ====================-->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
