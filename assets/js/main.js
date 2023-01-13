@@ -35,7 +35,7 @@ const skillsContent = document.getElementsByClassName('skills__content'),
       skillsHeader = document.querySelectorAll('.skills__header')
 
 function toggleskills(){
-    let itemclass = this.parentNode.ClassName
+    let itemclass = this.parentNode.className
 
     for(i=0; i< skillsContent.length; i++){
         skillsContent[i].className= 'skills__content skills__close'
@@ -50,9 +50,9 @@ skillsHeader.forEach((el)=>{
 })
 
 /*==================== QUALIFICATION TABS ====================*/
-// const tabs = document.querySelectorAll('[data-content]'),
+const tabs = document.querySelectorAll('[data-target]'),
+    tabContents = document.querySelectorAll('[data-content]')
 
-tabContents = document.querySelectorAll('[data-content]')
 
 tabs.forEach(tab =>{
    tab.addEventListener('click', () =>{
@@ -74,20 +74,20 @@ tabs.forEach(tab =>{
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services__modal'),
-       modalBtn = document.querySelectorAll('.services__button'),
-       modalClose = document.querySelectorAll('.services__modal-close')
+      modalBtns = document.querySelectorAll('.services__button'),
+      modalCloses = document.querySelectorAll('.services__modal-close')
 
 let modal = function(modalClick){
     modalViews[modalClick].classList.add('active-modal')
 }  
 
-modalBtns.forEach((modalBtn,i) => {
+modalBtns.forEach((modalBtn, i) => {
     modalBtn.addEventListener('click',() =>{
       modal(i)
     })
 })
 
-modalClose.forEach((modalClose) => {
+modalCloses.forEach((modalClose) => {
     modalClose.addEventListener('click',() =>{
         modalViews.forEach((modalViews) =>{
             modalViews.classList.remove('active-modal')
@@ -96,10 +96,53 @@ modalClose.forEach((modalClose) => {
 })
 
 /*==================== PORTFOLIO SWIPER  ====================*/
+// let swiperPortfolio  = new Swipper('.portfolio__container',{
+//     cssMode:true,
+//     loop:true,
 
+//     navigation:{
+//         nextE1:'.swiper-button-next',
+//         prevE1:'.swiper-button-prev',
+//     },
+//     pagination:{
+//         el:'.swiper-pagination',
+//         clickable:true,
+//     },
+
+// });
+
+let swiper = new Swiper(".portfolio__container", {
+    cssMode: true,
+    loop:true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable:true,
+    },
+    // mousewheel: true,
+    // keyboard: true,
+  });
 
 /*==================== TESTIMONIAL ====================*/
-
+let swiperTestimonial = new Swiper(".testimonial__container", {
+    loop:true,
+    grabCursor:true,
+    spaceBetween:48,
+   
+    pagination: {
+      el: ".swiper-pagination",
+      clickable:true,
+      dynamicBullets:true,
+    },
+    breakpoints:{
+        568:{
+            slidesPerView:2,
+        }
+    }
+  });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 

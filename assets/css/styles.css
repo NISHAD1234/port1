@@ -347,13 +347,23 @@ img {
   transition: .3s;
 }
 
+.button--white{
+  background-color: #fff;
+  color: var(--first-color);
+}
+
+.button--white:hover{
+  background-color: #fff;
+  color: var(--first-color);
+}
+
 .button--flex{
   display: inline-flex;
   align-items: center;
 }
 
 .button--small{
-  padding: .7srem 1 rem;
+  padding: .75rem 1 rem;
 }
 
 .button--link{
@@ -381,7 +391,8 @@ img {
 
 .about__info{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  /* justify-content: center; */
   margin-bottom: var(--mb-2-5);
 }
 
@@ -531,7 +542,7 @@ img {
 /*==================== QUALIFICATION ====================*/
 .qualification__tabs{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: var(--mb-2);
 }
 
@@ -566,7 +577,7 @@ img {
 .qualification__subtitle{
   display: inline-block;
   font-size: var(--small-font-size);
-  margin-bottom: var(--text-color-light);
+  margin-bottom: var(--mb-1);
 }
 
 .qualification__calender{
@@ -577,7 +588,8 @@ img {
 
 .qualification__rounder{
   display: inline-block;
-  widows: 13px;
+  /* widows: 13px; */
+  width: 13px;
   height: 13px;
   background-color: var(--first-color);
   border-radius: 50%;
@@ -611,12 +623,13 @@ img {
   position: relative;
   background-color:var(--container-color);
   padding: 3.5rem .5rem 1.25rem 1.5rem;
-  border-radius: 0 2px 4px rgba(0,0,0,.15);
+  border-radius: .25rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
   transition: .3s;
 
 }
 
-.services__content{
+.services__content:hover{
   box-shodow:0 4px 8px rgba(0,0,0,.15);
 }
 
@@ -654,7 +667,7 @@ img {
   justify-content: center;
   padding: 0 1rem;
   z-index: var(--z-modal);
-  opacity: 0;
+  /* opacity: 0; */
   visibility: hidden;
   transition: .3s;
 }
@@ -698,17 +711,142 @@ img {
 
 
 /* Active Modal */
-
+.active-modle{
+  opacity: 1;
+  visibility: visible;
+}
 
 /*==================== PORTFOLIO ====================*/
+.portfolio__container{
+  overflow: initial;
+}
 
+.portfolio__content{
+  padding: 0 1.5rem;
+}
+.portfolio__img{
+  width: 265px;
+  border-radius: .5rem;
+  justify-self: center;
+
+}
+
+.portfolio__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.portfolio__description{
+  margin-bottom: var(--mb-0-75);
+
+}
+
+.portfolio__button:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+  content: ;
+}
+
+.swiper-portfolio-icon{
+  font-size: 2rem;
+  color: var(--first-color);
+
+}
+
+.swiper-button-prev{
+  left: -.5rem;
+}
+
+.swiper-button-next{
+  right: -.5rem;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets{
+  bottom: -2.5rem;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: var(--first-color);
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet{
+  outline: none;
+}
 
 /*==================== PROJECT IN MIND ====================*/
+.project{
+  text-align: center;
+}
 
+.project__bg{
+  background-color: var(--first-color-second);
+  padding-top: 3rem;
+}
 
+.project__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-0-75);
+}
+
+.project__description{
+  margin-bottom: var(--mb-1-5);
+}
+
+.project__title,
+.project__description{
+  color: #fff;
+}
+
+.project__img{
+  width: 232px;
+  justify-self: center;
+}
 /*==================== TESTIMONIAL ====================*/
+.testimonial__data,
+.testimonial__header{
+  display: flex;
+}
 
 
+.tetimonial__data{
+  justify-content: space-between;
+  margin-bottom: var(--mb-1);
+}
+
+.testimonial__img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: var(--mb-0-75);
+}
+
+.testimonial__name{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.testimonial__client{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.testimonial__description{
+  margin-bottom: var(--mb-2-5);
+}
+
+.testimonial__icon-star{
+  color: var(--first-color);
+}
+
+
+.swiper-container .swiper-pagination-testimonial{
+  bottom: 0;
+}
 /*==================== CONTACT ME ====================*/
 .contact__container{
   row-gap: 3rem;
